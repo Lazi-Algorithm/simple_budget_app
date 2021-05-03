@@ -9,6 +9,7 @@ class SimpleBudget:
     #methods
     def deposit(self, amount):
         self.balance += amount
+        print(f"You have successfully deposited N{amount}. Your new balance is N{self.balance}")
         return self.balance
 
     def check_balance(self, amount):
@@ -20,6 +21,7 @@ class SimpleBudget:
     def withdraw(self, amount):
         if self.check_balance(amount) == True:
             self.balance -= amount
+            print(f"You have successfully withdrawn N{amount}. Your new balance is N{self.balance}")
             return self.balance
         else:
             return "Insufficient Funds. Check balance"
@@ -27,7 +29,7 @@ class SimpleBudget:
 
     def transfer(self, amount, category):
         if self.check_balance(amount) == True:
-            self.amount -= amount
+            self.balance -= amount
             category.balance += amount
             return f"You have successfully transferred N{amount} to {category.category}"
         else:
@@ -35,16 +37,4 @@ class SimpleBudget:
 
 
     
-# obj1 = SimpleBudget("School", 10000)
-# obj2 = SimpleBudget("Gorceries", 5000)
-# obj3 = SimpleBudget("Transportation", 2000)
-
-
-# print(f"You have successfully deposited N{amount}. Your new balance is N{self.balance}")
-
-# print(
-#     f"You have successfully withdrawn N{amount}. Your new balance is N{self.balance}")
-# print(obj1.deposit(300))
-# print(obj2.withdraw(400))
-
 
